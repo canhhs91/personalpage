@@ -223,6 +223,10 @@ p{
     /*opacity: 0.9;*/
 }
 
+.slide-images .slide-image{
+    transition: filter 1s ease;
+    will-change: filter transform;
+}
 .slide-images .slide-image.active{
     z-index: 1;
 }
@@ -230,7 +234,8 @@ p{
     /* display: none; */
     opacity: 0;
     z-index: 0;
-
+    /*transform: scale(1.2);*/
+    filter: blur(4px);
 }
 
 .slide-image::before{

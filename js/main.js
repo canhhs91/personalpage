@@ -43,15 +43,18 @@ $(document).ready(function(){
     interval = setInterval(function(){
         if(auto_play) $('.navigation-arrow.left-arrow').click();
     }, 5000);
-
-    $('.page-title').click(function(){
-        $('.main-menu ul').addClass('show');
-    })
-    $('.navigation-arrow').click(function(){
+    $('body').on('mousemove click', function(){
         window.clearInterval(interval);
         interval = setInterval(function(){
             if(auto_play) $('.navigation-arrow.left-arrow').click();
         }, 5000);
+    })
+    $('.page-title').click(function(){
+        $('.main-menu ul').addClass('show');
+    })
+
+
+    $('.navigation-arrow').click(function(){
         $('.transition-canvas-wrapper', parentdiv).removeClass('open');
         transition(parentdiv[0]);
         $('.transition-canvas-wrapper', parentdiv).addClass('open');
