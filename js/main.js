@@ -50,7 +50,7 @@ $(document).ready(function(){
         }, 5000);
     })
     $('.page-title').click(function(){
-        $('.main-menu ul').addClass('show');
+        $('.main-menu > ul').addClass('show');
     })
 
 
@@ -60,24 +60,24 @@ $(document).ready(function(){
         $('.transition-canvas-wrapper', parentdiv).addClass('open');
 
     })
-    $('.main-menu ul').on('mouseenter', function(e){
+    $('.main-menu > ul').on('mouseenter', function(e){
         is_mouse_on_menu = true;
     });
 
-    $('.main-menu ul').on('mouseleave', function(e){
+    $('.main-menu > ul').on('mouseleave', function(e){
         is_mouse_on_menu = false;
     });
 
     $('.header').on('mousemove', function(e){
         MAGIC_A = {x:$('.page-title span').offset().left + $('.page-title span').width()/2,y: 0};
-        MAGIC_B = {x:$('.main-menu ul').offset().left,y: $('.main-menu ul').offset().top};
-        MAGIC_C = {x:$('.main-menu ul').offset().left + $('.main-menu ul').outerWidth(), y:$('.main-menu ul').offset().top};
+        MAGIC_B = {x:$('.main-menu > ul').offset().left,y: $('.main-menu > ul').offset().top};
+        MAGIC_C = {x:$('.main-menu > ul').offset().left + $('.main-menu > ul').outerWidth(), y:$('.main-menu > ul').offset().top};
         // $('#magic-triangle').attr('points', MAGIC_A.x +','+MAGIC_A.y +' '+MAGIC_B.x +','+MAGIC_B.y +' '+MAGIC_C.x +','+MAGIC_C.y +' ');
         var D = {x: e.pageX, y: e.pageY};
         if (is_mouse_on_menu || pointInTriangle(D, MAGIC_A, MAGIC_B, MAGIC_C)){
-            $('.main-menu ul').addClass('show');
+            $('.main-menu > ul').addClass('show');
         }else{
-            $('.main-menu ul').removeClass('show');
+            $('.main-menu > ul').removeClass('show');
         }
     })
 })
