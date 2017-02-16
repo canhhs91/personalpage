@@ -353,12 +353,12 @@ p{
     overflow: hidden;
 }
 .main-menu li ul li{
-    margin: 0 5px 0 0;
     color: #fff;
     background: #000;
     display: block;
     text-align: left;
-    margin-bottom: 2px;
+    margin: 0 0 2px 0;
+    padding: 0;
 }
 .main-menu li:hover ul{
     top: 20px;
