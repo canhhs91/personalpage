@@ -42,6 +42,11 @@
 
     }
 
+
+    .main-menu > ul.show{
+        top: 45px;
+    }
+
     .page-title.show span{
         transform: rotate(-90deg);
     }

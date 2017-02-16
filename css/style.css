@@ -282,7 +282,7 @@ p{
 
 .main-menu > ul.show{
     opacity: 1;
-    top: 45px;
+    top: 10px;
 }
 .main-menu > ul li:hover{
     background: #FFF;
