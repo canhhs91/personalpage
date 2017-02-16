@@ -76,11 +76,11 @@ $(document).ready(function(){
             }
         })
     }else{
-        $('.page-title span').on('tap', function(){
+        $('.page-title span').on('click tap', function(){
             $('.main-menu > ul, .page-title').toggleClass('show');
         });
 
-        $('body').on('tap', function(e) {
+        $('body').on('click tap', function(e) {
             click_on_menu = $(e.target).closest('#main-menu').length;
             click_on_title = $(e.target).closest('#page-title').length;
             if(!click_on_title && !click_on_menu){
