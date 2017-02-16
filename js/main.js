@@ -1,4 +1,3 @@
-
 $.fn.fixsize = function(){
     $(this).css({'height':  $(parentdiv).height(), 'width':  $(parentdiv).width()});
     return this;
@@ -49,10 +48,6 @@ $(document).ready(function(){
             if(auto_play) $('.navigation-arrow.left-arrow').click();
         }, 5000);
     })
-    $('.page-title').click(function(){
-        $('.main-menu > ul').addClass('show');
-    })
-
 
     $('.navigation-arrow').click(function(){
         $('.transition-canvas-wrapper', parentdiv).removeClass('open');
@@ -67,17 +62,33 @@ $(document).ready(function(){
     $('.main-menu > ul').on('mouseleave', function(e){
         is_mouse_on_menu = false;
     });
+    if($(window).width > 600){
+        $('.header').on('mousemove', function(e){
+            MAGIC_A = {x:$('.page-title span').offset().left + $('.page-title span').width()/2,y: 0};
+            MAGIC_B = {x:$('.main-menu > ul').offset().left,y: $('.main-menu > ul').offset().top};
+            MAGIC_C = {x:$('.main-menu > ul').offset().left + $('.main-menu > ul').outerWidth(), y:$('.main-menu > ul').offset().top};
+            // $('#magic-triangle').attr('points', MAGIC_A.x +','+MAGIC_A.y +' '+MAGIC_B.x +','+MAGIC_B.y +' '+MAGIC_C.x +','+MAGIC_C.y +' ');
+            var D = {x: e.pageX, y: e.pageY};
+            if (is_mouse_on_menu || pointInTriangle(D, MAGIC_A, MAGIC_B, MAGIC_C)){
+                $('.main-menu > ul').addClass('show');
+            }else{
+                $('.main-menu > ul').removeClass('show');
+            }
+        })
+    }else{
+        $('.page-title span').on('tap', function(){
+            $('.main-menu > ul').toggleClass('show');
+        });
 
-    $('.header').on('mousemove', function(e){
-        MAGIC_A = {x:$('.page-title span').offset().left + $('.page-title span').width()/2,y: 0};
-        MAGIC_B = {x:$('.main-menu > ul').offset().left,y: $('.main-menu > ul').offset().top};
-        MAGIC_C = {x:$('.main-menu > ul').offset().left + $('.main-menu > ul').outerWidth(), y:$('.main-menu > ul').offset().top};
-        // $('#magic-triangle').attr('points', MAGIC_A.x +','+MAGIC_A.y +' '+MAGIC_B.x +','+MAGIC_B.y +' '+MAGIC_C.x +','+MAGIC_C.y +' ');
-        var D = {x: e.pageX, y: e.pageY};
-        if (is_mouse_on_menu || pointInTriangle(D, MAGIC_A, MAGIC_B, MAGIC_C)){
-            $('.main-menu > ul').addClass('show');
-        }else{
-            $('.main-menu > ul').removeClass('show');
-        }
-    })
+        $('body').on('tap', function(e) {
+            click_on_menu = $(e.target).closest('#main-menu').length;
+            click_on_title = $(e.target).closest('#page-title').length;
+            if(!click_on_title && !click_on_menu){
+                $('.main-menu > ul').removeClass('show');
+            }
+        })
+
+
+    }
+
 })

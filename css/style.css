@@ -1,6 +1,9 @@
 @import url('https://fonts.googleapis.com/css?family=Montserrat:100,200,400,500,700,900');
 @import url('https://fonts.googleapis.com/css?family=Karla:200,300,400');
+html{
+    -webkit-text-size-adjust: none;
 
+}
 body{
     font-family: 'Karla', sans-serif;
     -webkit-font-smoothing: antialiased;
@@ -37,14 +40,15 @@ p{
     color: white;
     text-transform: uppercase;
     font-weight: 600;
-    height: 200px;
+    height: 100px;
     left: 0;
     top:0;
 }
 
 .fullscreen-slider {
+    overflow: hidden;
     z-index: 1;
-    position: fixed;
+    position: absolute;
     top: 0;
     left: 0;
     width: 100%;
@@ -304,13 +308,16 @@ p{
     z-index: 10;
     width: 100%;
     height: 100%;
-    position: fixed;
+    position: absolute;
     top: 0;
     left: 0;
 }
 
 
 @media (max-width: 600px) {
+    .slide-description, .slide-title{
+        font-size: 18px;
+    }
     .main-menu > ul li ul{
         position: static;
         display: none;
