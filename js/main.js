@@ -62,7 +62,7 @@ $(document).ready(function(){
     $('.main-menu > ul').on('mouseleave', function(e){
         is_mouse_on_menu = false;
     });
-    if($(window).width > 600){
+    if($(window).width() > 600){
         $('.header').on('mousemove', function(e){
             MAGIC_A = {x:$('.page-title span').offset().left + $('.page-title span').width()/2,y: 0};
             MAGIC_B = {x:$('.main-menu > ul').offset().left,y: $('.main-menu > ul').offset().top};
