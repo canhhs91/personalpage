@@ -20,15 +20,18 @@
     }
 
     .main-menu > ul li {
-        display: list-item;
+        display: block;
         list-style: none;
-        text-align: left;
+        text-align: right;
+        float: right;
+        clear: both;
+        margin-right: 20px;
     }
 
     .page-title {
-        text-align: left;
+        text-align: right;
         display: block;
-        margin-left: 20px;
+        margin-right: 20px;
     }
 
 
