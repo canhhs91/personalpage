@@ -70,14 +70,14 @@ $(document).ready(function(){
             // $('#magic-triangle').attr('points', MAGIC_A.x +','+MAGIC_A.y +' '+MAGIC_B.x +','+MAGIC_B.y +' '+MAGIC_C.x +','+MAGIC_C.y +' ');
             var D = {x: e.pageX, y: e.pageY};
             if (is_mouse_on_menu || pointInTriangle(D, MAGIC_A, MAGIC_B, MAGIC_C)){
-                $('.main-menu > ul').addClass('show');
+                $('.main-menu > ul, .page-title').addClass('show');
             }else{
-                $('.main-menu > ul').removeClass('show');
+                $('.main-menu > ul, .page-title').removeClass('show');
             }
         })
     }else{
         $('.page-title span').on('tap', function(){
-            $('.main-menu > ul').toggleClass('show');
+            $('.main-menu > ul, .page-title').toggleClass('show');
         });
 
         $('body').on('tap', function(e) {
