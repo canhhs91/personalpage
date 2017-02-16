@@ -369,3 +369,8 @@ p{
 color: #000;
 background: #fff;
 }
+
+
+.ui-loader{
+    display: none;
+}
