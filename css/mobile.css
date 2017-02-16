@@ -35,7 +35,7 @@
     }
 
     .page-title span{
-        transition: background 0.2s ease, transform 0.4s cubic-bezier(.12,.74,.34,.89);
+        transition: background 0.4s ease, transform 0.4s cubic-bezier(.12,.74,.34,.89);
         padding: 0 5px;
         display: inline-block;
         transform-origin: bottom right;
