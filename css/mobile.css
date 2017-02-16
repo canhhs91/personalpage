@@ -1,4 +1,7 @@
 @media (max-width: 600px) {
+    body{
+        cursor: pointer;
+    }
     .slide-description, .slide-title{
         font-size: 18px;
     }
