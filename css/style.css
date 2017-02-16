@@ -314,34 +314,6 @@ p{
     left: 0;
 }
 
-
-@media (max-width: 600px) {
-    .slide-description, .slide-title{
-        font-size: 18px;
-    }
-    .main-menu > ul li ul{
-        position: static;
-        display: none;
-    }
-    .main-menu > ul li:hover ul{
-        display: block;
-    }
-    .main-menu > ul li {
-        display: list-item;
-        list-style: none;
-        text-align: left;
-    }
-
-    .page-title {
-        text-align: left;
-        display: block;
-        margin-left: 20px;
-    }
-
-
-}
-
-
 .main-menu li ul{
     position: absolute;
     padding: 5px 0;
@@ -358,7 +330,7 @@ p{
     display: block;
     text-align: left;
     margin: 0 0 2px 0;
-    padding: 0;
+    padding: 0 10px;
 }
 .main-menu li:hover ul{
     top: 20px;

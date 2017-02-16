@@ -1,0 +1,35 @@
+@media (max-width: 600px) {
+    .slide-description, .slide-title{
+        font-size: 18px;
+    }
+    .main-menu > ul li ul{
+        position: static;
+        display: none;
+    }
+    .main-menu > ul li:hover ul{
+        display: block;
+    }
+
+    .main-menu > ul > li {
+        margin: 2px 0;
+    }
+
+    .main-menu li ul li {
+        background: #fff;
+        color: #000;
+    }
+
+    .main-menu > ul li {
+        display: list-item;
+        list-style: none;
+        text-align: left;
+    }
+
+    .page-title {
+        text-align: left;
+        display: block;
+        margin-left: 20px;
+    }
+
+
+}
