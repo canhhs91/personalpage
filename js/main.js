@@ -84,7 +84,7 @@ $(document).ready(function(){
             click_on_menu = $(e.target).closest('#main-menu').length;
             click_on_title = $(e.target).closest('#page-title').length;
             if(!click_on_title && !click_on_menu){
-                $('.main-menu > ul').removeClass('show');
+                $('.main-menu > ul, .page-title').removeClass('show');
             }
         })
 
