@@ -43,6 +43,6 @@
     }
 
     .page-title.show span{
-        transform: rotate(-450deg);
+        transform: rotate(-90deg);
     }
 }
