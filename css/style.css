@@ -375,14 +375,14 @@ background: #fff;
     perspective: 800px;
 }
 .album-transitioner.flipped .album-transitioner-part{
-    transform: rotateY( -180deg );
+    transform: rotateX(180deg) rotateY(180deg);
 }
 .album-transitioner-part {
     width: 25%;
     height: 25%;
     background: black;
     float: left;
-    transition: transform 1s ease;
+    transition: transform 1.5s ease;
     will-change: transform;
     transform-style: preserve-3d;
     overflow: hidden;

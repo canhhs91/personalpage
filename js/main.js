@@ -5,7 +5,7 @@ $.fn.fixsize = function(){
 
 var MAGIC_A, MAGIC_B, MAGIC_C;
 var is_mouse_on_menu = false;
-var auto_play = true;
+var auto_play = 1;
 area = function(A, B, C) {
     return Math.abs(( A.x * (B.y - C.y) + B.x * (C.y - A.y) + C.x * (A.y - B.y) ) / 2);
 }
@@ -21,14 +21,14 @@ pointInTriangle = function(D, A, B, C) {
     return false;
 }
 function transition_to_album(){
-    auto_play = false;
+    auto_play = 1 - auto_play;
     $('.album-transitioner-part').each(function(){
         $(this).html('').append($('#homepage-slider').clone().attr('id', '').css({'width':$('#homepage-slider').width() , 'height': $('#homepage-slider').height()}).addClass('temp-cloner-1'));
     })
-    $('.album-transitioner').css('z-index', 2).addClass('flipped');
+    $('.album-transitioner').css('z-index', 2 - $('.album-transitioner').css('z-index')).toggleClass('flipped');
 
     setTimeout(function(){
-        auto_play = true;
+        auto_play = 1;
     }, 5000);
 }
 $(document).ready(function(){
