@@ -16,6 +16,7 @@
     .main-menu > ul li:hover ul{
         height: 0;
         padding: 0;
+        background: transparent;
     }
 
     .main-menu > ul li.open ul{
