@@ -69,6 +69,8 @@
         display: initial;
         padding: 0 2px;
     }
-
+    .main-menu li ul li {
+        text-align: right;
+    }
 
 }

@@ -299,7 +299,7 @@ p{
     cursor: pointer;
     width: 16%;
     min-width: 150px;
-    margin: 10px 0;
+    margin: 0 0 50px 0;
     max-width: 180px;
 }
 .main-menu > ul li a{
@@ -340,10 +340,11 @@ p{
 .main-menu li ul{
     position: absolute;
     padding: 5px 0;
-    margin: 0px 0 0 -5px;
+    /*margin: 0px 0 0 -5px;*/
     transition: all 0.3s cubic-bezier(.39,.82,.66,.8);
     display: none;
     overflow: hidden;
+    width: 100%;
 }
 .main-menu li ul li a{
     color: #fff;
@@ -351,8 +352,8 @@ p{
 }
 .main-menu li ul li{
     display: block;
-    text-align: left;
     margin: 0 0 2px 0;
+    text-align: center;
 }
 .main-menu li:hover ul{
     display: block;
