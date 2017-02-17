@@ -80,7 +80,7 @@ $(document).ready(function(){
             $('.main-menu > ul, .page-title').toggleClass('show');
         });
 
-        $('body').on(click, function(e) {
+        $('body').on('click', function(e) {
             click_on_menu = $(e.target).closest('#main-menu').length;
             click_on_title = $(e.target).closest('#page-title').length;
             if(!click_on_title && !click_on_menu){
