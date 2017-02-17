@@ -289,7 +289,7 @@ p{
     opacity: 1;
     top: 5px;
 }
-.main-menu > ul li:hover{
+.main-menu > ul li:hover > a{
     background: #FFF;
     color: #000;
 }
@@ -299,10 +299,15 @@ p{
     cursor: pointer;
     margin: 2px 20px;
     padding: 0 5px;
+}
+.main-menu > ul li a{
     background: rgba(0, 0, 0, 0.7);
+    display: block;
+    padding: 0 10px;
 }
 
 .main-menu {
+    padding: 0 30px;
     margin: 10px 0;
 }
 .splash{
@@ -334,26 +339,25 @@ p{
     position: absolute;
     padding: 5px 0;
     margin: 0px 0 0 -5px;
-    opacity: 0;
     transition: all 0.3s cubic-bezier(.39,.82,.66,.8);
     display: none;
     overflow: hidden;
 }
-.main-menu li ul li{
+.main-menu li ul li a{
     color: #fff;
-    background: #000;
+    background: rgba(0, 0, 0, 0.7);
+}
+.main-menu li ul li{
     display: block;
     text-align: left;
     margin: 0 0 2px 0;
-    padding: 0 10px;
 }
 .main-menu li:hover ul{
-    opacity: 1;
     display: block;
 }
-.main-menu li ul li:hover{
-color: #000;
-background: #fff;
+.main-menu li ul li:hover a{
+    color: #000;
+    background: #fff;
 }
 
 

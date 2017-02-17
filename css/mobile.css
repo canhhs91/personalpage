@@ -5,11 +5,19 @@
     .slide-description, .slide-title{
         font-size: 18px;
     }
+    .main-menu{
+        padding: 0;
+    }
     .main-menu > ul li ul{
         position: static;
         display: none;
     }
+
     .main-menu > ul li:hover ul{
+        display: none;
+    }
+
+    .main-menu > ul li.open ul{
         display: block;
     }
 
@@ -17,10 +25,6 @@
         margin: 2px 0;
     }
 
-    .main-menu li ul li {
-        background: #fff;
-        color: #000;
-    }
 
     .main-menu > ul li {
         display: block;
@@ -29,6 +33,7 @@
         float: right;
         clear: both;
         margin-right: 20px;
+        padding: 0;
     }
 
     .page-title {
@@ -53,4 +58,12 @@
     .page-title.show span{
         transform: rotate(-90deg);
     }
+    .main-menu ul li.open ul{
+        display: block;
+    }
+    .main-menu > ul li a {
+        display: initial;
+    }
+
+
 }

@@ -36,6 +36,7 @@ $(document).ready(function(){
     }, 1000);
 
     function transition(parentdiv, direction){
+        $('.transition-canvas-wrapper', parentdiv).removeClass('open');
         wrapper_1 = $('.transition-canvas-wrapper.top', parentdiv);
         wrapper_2 = $('.transition-canvas-wrapper.bottom', parentdiv);
         $(wrapper_1).html('');
@@ -53,26 +54,28 @@ $(document).ready(function(){
 
         $('.slide-image.active', parentdiv).removeClass('active');
         $(next_slide).addClass('active');
+        $('.transition-canvas-wrapper', parentdiv).addClass('open');
+
     }
     parentdiv = $('.fullscreen-slider');
     interval = setInterval(function(){
-        if(auto_play) $('.navigation-arrow.left-arrow', parentdiv).click();
+        if(auto_play) transition(parentdiv[0], 'right');
     }, 5000);
     $('body').on('mousemove click', function(){
         window.clearInterval(interval);
         interval = setInterval(function(){
-            if(auto_play) $('.navigation-arrow.left-arrow',parentdiv).click();
+            if(auto_play) transition(parentdiv[0], 'right');
         }, 5000);
     })
 
     $('.navigation-arrow', parentdiv).click(function(){
-        $('.transition-canvas-wrapper', parentdiv).removeClass('open');
+
         if($(this).hasClass('left-arrow')){
             transition(parentdiv[0], 'left');
         }else{
             transition(parentdiv[0], 'right');
         }
-        $('.transition-canvas-wrapper', parentdiv).addClass('open');
+
 
     })
     $('.main-menu > ul').on('mouseenter', function(e){
@@ -102,14 +105,19 @@ $(document).ready(function(){
     $('.page-title span').on('click', function(){
         if($(window).width() < 600){
             $('.main-menu > ul, .page-title').toggleClass('show');
+            $('.main-menu ul li').removeClass('open');
         }
     });
+    $('.main-menu ul li > a').on('tap', function(){
+        $(this).closest('li').toggleClass('open');
 
+    })
     $('body').on('click', function(e) {
         click_on_menu = $(e.target).closest('#main-menu').length;
         click_on_title = $(e.target).closest('#page-title').length;
         if(!click_on_title && !click_on_menu){
             $('.main-menu > ul, .page-title').removeClass('show');
+            $('.main-menu ul li').removeClass('open');
         }
     })
 
