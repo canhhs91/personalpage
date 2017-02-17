@@ -130,12 +130,12 @@ p{
     opacity: 1;
 }
 .slide-images .slide-description{
-    transition: all 1s cubic-bezier(1,.02,.92,.7);
+    transition: opacity 1s cubic-bezier(1,.02,.92,.7), top 1s cubic-bezier(1,.02,.92,.7);
     position: relative;
     opacity: 0;
 }
 .slide-images .slide-title{
-    transition: all 1s ease;
+    transition: opacity 1s ease, top 1s ease;
     position: relative;
     top: 50px;
     opacity: 0;
@@ -297,12 +297,14 @@ p{
     display: inline-block;
     font-weight: 400;
     cursor: pointer;
-    margin: 2px 20px;
-    padding: 0 5px;
+    width: 16%;
+    min-width: 150px;
+    margin: 10px 0;
+    max-width: 180px;
 }
 .main-menu > ul li a{
     background: rgba(0, 0, 0, 0.7);
-    display: block;
+    display: inline-block;
     padding: 0 10px;
 }
 

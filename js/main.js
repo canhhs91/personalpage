@@ -102,7 +102,7 @@ $(document).ready(function(){
         }
     })
 
-    $('.page-title span').on('click', function(){
+    $('.page-title span').on('tap', function(){
         if($(window).width() < 600){
             $('.main-menu > ul, .page-title').toggleClass('show');
             $('.main-menu ul li').removeClass('open');
@@ -112,7 +112,7 @@ $(document).ready(function(){
         $(this).closest('li').toggleClass('open');
 
     })
-    $('body').on('click', function(e) {
+    $('body').on('tap', function(e) {
         click_on_menu = $(e.target).closest('#main-menu').length;
         click_on_title = $(e.target).closest('#page-title').length;
         if(!click_on_title && !click_on_menu){

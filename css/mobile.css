@@ -35,6 +35,8 @@
         clear: both;
         margin-right: 20px;
         padding: 0;
+        width: inherit;
+        min-width: inherit;
     }
 
     .page-title {
