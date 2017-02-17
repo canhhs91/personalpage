@@ -112,7 +112,6 @@ p{
 
 
 .slide-text {
-    ome
     z-index: 0;
     text-align: center;
     position: absolute;
@@ -376,6 +375,7 @@ background: #fff;
 }
 .album-transitioner .album-transitioner-part.flipped{
     transition: transform 1.5s  cubic-bezier(1,.1,.83,.67);
+    -webkit-transition: transform 1.5s  cubic-bezier(1,.1,.83,.67);
      transform:rotateY(180deg);
 }
 .album-transitioner-part {
