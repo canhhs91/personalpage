@@ -44,7 +44,6 @@ p{
     color: white;
     text-transform: uppercase;
     font-weight: 600;
-    height: 100px;
     left: 0;
     top:0;
 }
@@ -331,10 +330,9 @@ p{
     position: absolute;
     padding: 5px 0;
     margin: 0px 0 0 -5px;
-    top: 15px;
     opacity: 0;
     transition: all 0.3s cubic-bezier(.39,.82,.66,.8);
-    height: 0;
+    display: none;
     overflow: hidden;
 }
 .main-menu li ul li{
@@ -346,10 +344,8 @@ p{
     padding: 0 10px;
 }
 .main-menu li:hover ul{
-    top: 20px;
     opacity: 1;
-    height: auto;
-
+    display: block;
 }
 .main-menu li ul li:hover{
 color: #000;
