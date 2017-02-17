@@ -281,8 +281,7 @@ p{
     top: 0;
     opacity: 0;
     transition: all 0.4s cubic-bezier(.39,.82,.66,.8);
-    padding: 0 0 10px 0;
-
+    padding: 0;
 }
 
 .main-menu > ul.show{
@@ -310,7 +309,7 @@ p{
 
 .main-menu {
     padding: 0 30px;
-    margin: 10px 0;
+    margin: 0;
 }
 .splash{
     background-image: url(../images/spin.gif);
