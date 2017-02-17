@@ -20,12 +20,23 @@ pointInTriangle = function(D, A, B, C) {
     }
     return false;
 }
+
+function flip_part(element){
+    console.log(element);
+    $(element).toggleClass('flipped');
+    if($(element).next('.album-transitioner-part').length > 0){
+        setTimeout(function(){
+            flip_part($(element).next('.album-transitioner-part'));
+        }, 100);
+    }
+}
 function transition_to_album(){
     auto_play = 0;
     $('.album-transitioner-part').each(function(){
         $(this).html('').append($('#homepage-slider').clone().attr('id', '').css({'width':$('#homepage-slider').width() , 'height': $('#homepage-slider').height()}).addClass('temp-cloner-1'));
     })
-    $('.album-transitioner').css('z-index', 2 - $('.album-transitioner').css('z-index')).toggleClass('flipped');
+    $('.album-transitioner').css('z-index', 2);
+    flip_part($('.album-transitioner .album-transitioner-part:eq(0)'));
 }
 $(document).ready(function(){
     setTimeout(function(){
