@@ -21,15 +21,11 @@ pointInTriangle = function(D, A, B, C) {
     return false;
 }
 function transition_to_album(){
-    auto_play = 1 - auto_play;
+    auto_play = 0;
     $('.album-transitioner-part').each(function(){
         $(this).html('').append($('#homepage-slider').clone().attr('id', '').css({'width':$('#homepage-slider').width() , 'height': $('#homepage-slider').height()}).addClass('temp-cloner-1'));
     })
     $('.album-transitioner').css('z-index', 2 - $('.album-transitioner').css('z-index')).toggleClass('flipped');
-
-    setTimeout(function(){
-        auto_play = 1;
-    }, 5000);
 }
 $(document).ready(function(){
     setTimeout(function(){
