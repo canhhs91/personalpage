@@ -35,15 +35,22 @@ $(document).ready(function(){
         $('.splash').fadeOut();
     }, 1000);
 
-    function transition(parentdiv){
+    function transition(parentdiv, direction){
         wrapper_1 = $('.transition-canvas-wrapper.top', parentdiv);
         wrapper_2 = $('.transition-canvas-wrapper.bottom', parentdiv);
         $(wrapper_1).html('');
         $(wrapper_2).html('');
         $(wrapper_1).append($('.slide-image.active', parentdiv).clone().fixsize().removeClass('active'));
         $(wrapper_2).append($('.slide-image.active', parentdiv).clone().fixsize().removeClass('active'));
-        next_slide = $('.slide-image.active', parentdiv).next('.slide-image');
-        if (next_slide.length == 0) next_slide = $('.slide-image:eq(0)', parentdiv);
+        if(direction == 'right'){
+            next_slide = $('.slide-image.active', parentdiv).next('.slide-image');
+            if (next_slide.length == 0) next_slide = $('.slide-image:first-child', parentdiv);
+        }else{
+            next_slide = $('.slide-image.active', parentdiv).prev('.slide-image');
+            if (next_slide.length == 0) next_slide = $('.slide-image:last-child', parentdiv);
+        }
+
+
         $('.slide-image.active', parentdiv).removeClass('active');
         $(next_slide).addClass('active');
     }
@@ -60,7 +67,11 @@ $(document).ready(function(){
 
     $('.navigation-arrow', parentdiv).click(function(){
         $('.transition-canvas-wrapper', parentdiv).removeClass('open');
-        transition(parentdiv[0]);
+        if($(this).hasClass('left-arrow')){
+            transition(parentdiv[0], 'left');
+        }else{
+            transition(parentdiv[0], 'right');
+        }
         $('.transition-canvas-wrapper', parentdiv).addClass('open');
 
     })
