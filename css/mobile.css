@@ -14,7 +14,8 @@
     }
 
     .main-menu > ul li:hover ul{
-        display: none;
+        height: 0;
+        padding: 0;
     }
 
     .main-menu > ul li.open ul{
@@ -59,10 +60,12 @@
         transform: rotate(-90deg);
     }
     .main-menu ul li.open ul{
-        display: block;
+        height: initial;
+        padding: inherit;
     }
     .main-menu > ul li a {
         display: initial;
+        padding: 0 2px;
     }
 
 
