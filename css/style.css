@@ -376,17 +376,17 @@ background: #fff;
 }
 .album-transitioner.flipped .album-transitioner-part{
     transition: transform 1.5s  cubic-bezier(1,.1,.83,.67);
-    transform: rotateX(180deg) rotateY(180deg);
+     transform: rotateX(180deg) rotateY(180deg); 
 }
 .album-transitioner-part {
     transition: none;
-
     will-change: transform;
     width: 25%;
     height: 25%;
-    float: left;
     transform-style: preserve-3d;
     overflow: hidden;
+    vertical-align: middle;
+    display: inline-table;
 }
 
 
