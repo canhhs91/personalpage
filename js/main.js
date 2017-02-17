@@ -20,7 +20,17 @@ pointInTriangle = function(D, A, B, C) {
     }
     return false;
 }
+function transition_to_album(){
+    auto_play = false;
+    $('.album-transitioner-part').each(function(){
+        $(this).html('').append($('#homepage-slider').clone().attr('id', '').css({'width':$('#homepage-slider').width() , 'height': $('#homepage-slider').height()}).addClass('temp-cloner-1'));
+    })
+    $('.album-transitioner').css('z-index', 2).addClass('flipped');
 
+    setTimeout(function(){
+        auto_play = true;
+    }, 5000);
+}
 $(document).ready(function(){
     setTimeout(function(){
         $('.splash').fadeOut();
@@ -31,25 +41,25 @@ $(document).ready(function(){
         wrapper_2 = $('.transition-canvas-wrapper.bottom', parentdiv);
         $(wrapper_1).html('');
         $(wrapper_2).html('');
-        $(wrapper_1).append($('.slide-image.active').clone().fixsize().removeClass('active'));
-        $(wrapper_2).append($('.slide-image.active').clone().fixsize().removeClass('active'));
+        $(wrapper_1).append($('.slide-image.active', parentdiv).clone().fixsize().removeClass('active'));
+        $(wrapper_2).append($('.slide-image.active', parentdiv).clone().fixsize().removeClass('active'));
         next_slide = $('.slide-image.active', parentdiv).next('.slide-image');
         if (next_slide.length == 0) next_slide = $('.slide-image:eq(0)', parentdiv);
-        $('.slide-image.active').removeClass('active');
+        $('.slide-image.active', parentdiv).removeClass('active');
         $(next_slide).addClass('active');
     }
     parentdiv = $('.fullscreen-slider');
     interval = setInterval(function(){
-        if(auto_play) $('.navigation-arrow.left-arrow').click();
+        if(auto_play) $('.navigation-arrow.left-arrow', parentdiv).click();
     }, 5000);
     $('body').on('mousemove click', function(){
         window.clearInterval(interval);
         interval = setInterval(function(){
-            if(auto_play) $('.navigation-arrow.left-arrow').click();
+            if(auto_play) $('.navigation-arrow.left-arrow',parentdiv).click();
         }, 5000);
     })
 
-    $('.navigation-arrow').click(function(){
+    $('.navigation-arrow', parentdiv).click(function(){
         $('.transition-canvas-wrapper', parentdiv).removeClass('open');
         transition(parentdiv[0]);
         $('.transition-canvas-wrapper', parentdiv).addClass('open');
