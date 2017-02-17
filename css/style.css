@@ -300,6 +300,7 @@ p{
     min-width: 150px;
     margin: 0 0 10px 0;
     max-width: 180px;
+    position: relative;
 }
 .main-menu > ul li a{
     background: #111;
@@ -343,6 +344,8 @@ p{
     transition: all 0.3s cubic-bezier(.39,.82,.66,.8);
     display: none;
     overflow: hidden;
+    width: 100%;
+    z-index: 5;
 }
 .main-menu li ul li a{
     color: #fff;
