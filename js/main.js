@@ -27,7 +27,7 @@ function transition_to_album(){
     $('.album-transitioner-part').each(function(){
         $(this).html('').append($('#homepage-slider').clone().attr('id', '').css({'width':$('#homepage-slider').width() , 'height': $('#homepage-slider').height()}).addClass('temp-cloner-1'));
     })
-    $('.album-transitioner').css('z-index', 2);
+    $('.album-transitioner').css('z-index', 2 - $('.album-transitioner').css('z-index'));
     $('.album-transitioner .album-transitioner-part').toggleClass('flipped');
 }
 $(document).ready(function(){
