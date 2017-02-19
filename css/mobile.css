@@ -5,6 +5,13 @@
     .slide-description, .slide-title{
         font-size: 18px;
     }
+    .slide-description{
+        font-weight: 400;
+    }
+    .slide-title{
+
+        font-weight: bold;
+    }
     .main-menu{
         padding: 0;
     }
@@ -73,5 +80,7 @@
     .main-menu li ul li {
         text-align: right;
     }
-
+    .slide-access-button {
+        font-weight: bold;
+    }
 }
