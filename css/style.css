@@ -292,6 +292,8 @@ p{
     background: #FFF;
     color: #000;
 }
+
+
 .main-menu > ul li {
     display: inline-block;
     font-weight: 400;
@@ -301,6 +303,9 @@ p{
     margin: 0 0 10px 0;
     max-width: 180px;
     position: relative;
+}
+.main-menu > ul li:hover a{
+    display: block;
 }
 .main-menu > ul li a{
     background: #111;
