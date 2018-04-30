@@ -5,7 +5,7 @@ $.fn.fixsize = function(){
 
 var MAGIC_A, MAGIC_B, MAGIC_C;
 var is_mouse_on_menu = false;
-var auto_play = 1;
+var auto_play = 0;
 area = function(A, B, C) {
     return Math.abs(( A.x * (B.y - C.y) + B.x * (C.y - A.y) + C.x * (A.y - B.y) ) / 2);
 }
