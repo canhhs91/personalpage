@@ -327,6 +327,7 @@ p{
     background: #111;
     /* display: block; */
     padding: 0 10px;
+    /* transition: all 0.3s ease; */
 }
 
 .main-menu {

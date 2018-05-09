@@ -89,9 +89,12 @@ $(document).ready(function(){
         }else{
             transition(parentdiv[0], 'right');
         }
+    });
 
+    $('.slide-image', parentdiv).click(function(){
+        transition(parentdiv[0], 'right');
+    });
 
-    })
     $('.main-menu > ul').on('mouseenter', function(e){
         is_mouse_on_menu = true;
     });
