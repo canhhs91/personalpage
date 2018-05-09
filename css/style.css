@@ -16,6 +16,7 @@ body{
     -webkit-font-smoothing: antialiased;
     position: absolute;
     /* font-weight: 300; */
+    background: #000;
 }
 
 a, a:visited, a:hover, a:active {
