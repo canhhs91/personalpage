@@ -64,9 +64,9 @@
     .main-menu > ul{
         display: block;
     }
-    
+
     .main-menu > ul.show{
-        top: 60px;
+        top:65px;
     }
 
     .page-title.show span{
