@@ -45,11 +45,10 @@ function init_images(){
     }
 }
 $(document).ready(function(){
-    init_images();
     setTimeout(function(){
         $('.splash').fadeOut();
     }, 1000);
-
+    init_images();
     function transition(parentdiv, direction){
         $('.transition-canvas-wrapper', parentdiv).removeClass('open');
         wrapper_1 = $('.transition-canvas-wrapper.top', parentdiv);
