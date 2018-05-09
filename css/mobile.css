@@ -61,10 +61,12 @@
 
     }
 
-
+    .main-menu > ul{
+        display: block;
+    }
+    
     .main-menu > ul.show{
         top: 60px;
-        display: block;
     }
 
     .page-title.show span{
