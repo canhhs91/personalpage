@@ -77,7 +77,7 @@
         padding: inherit;
     }
     .main-menu > ul li a {
-        display: initial;
+        display: block;
         padding: 0 2px;
     }
     .main-menu li ul li {
