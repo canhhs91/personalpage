@@ -4,6 +4,7 @@ $.fn.fixsize = function(){
     return this;
 }
 
+const TRANSITION_INTERVAL = 3000;
 var MAGIC_A, MAGIC_B, MAGIC_C;
 var is_mouse_on_menu = false;
 var auto_play = 1;
@@ -74,12 +75,12 @@ $(document).ready(function(){
     parentdiv = $('.fullscreen-slider');
     interval = setInterval(function(){
         if(auto_play) transition(parentdiv[0], 'right');
-    }, 5000);
+    }, TRANSITION_INTERVAL);
     $('body').on('mousemove click', function(){
         window.clearInterval(interval);
         interval = setInterval(function(){
             if(auto_play) transition(parentdiv[0], 'right');
-        }, 3000);
+        }, TRANSITION_INTERVAL);
     })
 
     $('.navigation-arrow', parentdiv).click(function(){
