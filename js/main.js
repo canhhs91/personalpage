@@ -12,7 +12,7 @@ area = function(A, B, C) {
 }
 
 
-pointInTriangle = function(D, A, B, C) {
+point_in_triangle = function(D, A, B, C) {
     var ABD = area(A, B, D);
     var BDC = area(B, D, C);
     var CAD = area(C, A, D);
@@ -107,7 +107,7 @@ $(document).ready(function(){
             MAGIC_C = {x:$('.main-menu > ul').offset().left + $('.main-menu > ul').outerWidth(), y:$('.main-menu > ul').offset().top};
             // $('#magic-triangle').attr('points', MAGIC_A.x +','+MAGIC_A.y +' '+MAGIC_B.x +','+MAGIC_B.y +' '+MAGIC_C.x +','+MAGIC_C.y +' ');
             var D = {x: e.pageX, y: e.pageY};
-            if (is_mouse_on_menu || pointInTriangle(D, MAGIC_A, MAGIC_B, MAGIC_C)){
+            if (is_mouse_on_menu || point_in_triangle(D, MAGIC_A, MAGIC_B, MAGIC_C)){
                 $('.main-menu > ul, .page-title').addClass('show');
             }else{
                 $('.main-menu > ul, .page-title').removeClass('show');
