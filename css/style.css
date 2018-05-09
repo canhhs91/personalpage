@@ -291,7 +291,7 @@ p{
 }
 
 .main-menu > ul {
-    display: block;
+    display: inline-block;
     left: 0;
     position: relative;
     top: 0;
