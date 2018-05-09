@@ -77,6 +77,8 @@ p{
     position: absolute;
     top: 0;
     left: 0;
+    background-repeat: no-repeat;
+    background-color: #000;
 }
 
 .navigation-arrow{
@@ -256,9 +258,9 @@ p{
     width: 100%;
     opacity: 0.8;
     height: 100%;
-    background: -moz-radial-gradient(center, ellipse cover, rgba(63,63,63,0.4) 0%, rgba(0,0,0,0.99) 99%, rgba(0,0,0,1) 100%); /* FF3.6-15 */
-    background: -webkit-radial-gradient(center, ellipse cover, rgba(63,63,63,0.4) 0%,rgba(0,0,0,0.99) 99%,rgba(0,0,0,1) 100%); /* Chrome10-25,Safari5.1-6 */
-    background: radial-gradient(ellipse at center, rgba(63,63,63,0.4) 0%,rgba(0,0,0,0.99) 99%,rgba(0,0,0,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    background: -moz-radial-gradient(center, ellipse cover, rgba(63,63,63,0.4) 0%, rgba(0,0,0,0.99) 45%, rgba(0,0,0,1) 100%); /* FF3.6-15 */
+    background: -webkit-radial-gradient(center, ellipse cover, rgba(63,63,63,0.4) 0%,rgba(0, 0, 0, 0.45) 99%,rgba(0,0,0,1) 100%); /* Chrome10-25,Safari5.1-6 */
+    background: radial-gradient(ellipse at center, rgba(63,63,63,0.4) 0%,rgba(0, 0, 0, 0.45) 99%,rgba(0,0,0,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
 }
 
 .slide-image::after{

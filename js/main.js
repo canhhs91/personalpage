@@ -37,8 +37,14 @@ function show_album(album){
 }
 
 
-
+function init_images(){
+    $('<div class="slide-image active" style="background-image: url(images/background-1.jpg);"></div>').appendTo($('.slide-images'));
+    for (var i = 2; i < 30; i++) {
+        $('<div class="slide-image" style="background-image: url(images/background-'+i+'.jpg);"></div>').appendTo($('.slide-images'));
+    }
+}
 $(document).ready(function(){
+    init_images();
     setTimeout(function(){
         $('.splash').fadeOut();
     }, 1000);
@@ -128,16 +134,4 @@ $(document).ready(function(){
         //     $('.main-menu ul li').removeClass('open');
         // }
     })
-
-    // $('.slide-access-button, a').on('mouseenter', function(){
-    //     $('.modal:not(.show)').css({
-    //         'top': $(this).offset().top,
-    //         'left': $(this).offset().left,
-    //         'width': $(this).outerWidth(),
-    //         'height': $(this).outerHeight()
-    //     });
-    // }).on('click', function(){
-    //     show_modal();
-    // })
-
 })
