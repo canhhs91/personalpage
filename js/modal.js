@@ -1,11 +1,6 @@
 function show_modal(){
     $('.navigation-arrow').hide();
-    $('.modal').css({
-        'top': '',
-        'left': '',
-        'width': '',
-        'height': ''
-    }).addClass('show');
+    $('.modal').addClass('show');
     $('.modal-bg').addClass('show');
 }
 function hide_modal(){

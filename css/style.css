@@ -398,23 +398,21 @@ p{
     font-family: Karla;
     font-weight: 400;
     font-style: normal;
-    z-index: 0;
-    top: 0;
-    left: 0;
-    width: 0;
+    z-index: 1001;
+    top: 40px;
+    left: 20px;
+    width: calc(100% - 40px);
     height: 0;
     background: #000000;
-    opacity: 1;
+    overflow: hidden;
 }
 
 .modal.show{
-    transition: all 0.5s cubic-bezier(0.84, 0.16, 0.32, 0.69);
-    
-    top: 105px;
-    left: 20%;
-    width: 60%;
-    height: 60%;
-    display: block;
+    transition: all 0.2s cubic-bezier(0.84, 0.16, 0.32, 0.69);
+    top: 40px;
+    left: 20px;
+    width: calc(100% - 40px);
+    height: calc(100% - 60px);
     opacity: 1;
     z-index: 1001;
 }

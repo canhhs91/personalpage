@@ -130,12 +130,12 @@ $(document).ready(function(){
     })
 
     $('.slide-access-button, a').on('mouseenter', function(){
-        $('.modal:not(.show)').css({
-            'top': $(this).offset().top,
-            'left': $(this).offset().left,
-            'width': $(this).outerWidth(),
-            'height': $(this).outerHeight()
-        });
+        // $('.modal:not(.show)').css({
+        //     'top': $(this).offset().top + $(this).outerHeight()/2,
+        //     'left': $(this).offset().left +  $(this).outerWidth()/2,
+        //     'width': 0,// $(this).outerWidth(),
+        //     'height': 0,// $(this).outerHeight()
+        // });
     }).on('click', function(){
         show_modal();
     })
