@@ -145,7 +145,7 @@ $(document).ready(function(){
         }
     });
 
-    $('.slide-image', parentdiv).on('click', function(e){
+    parentdiv.on('click', function(e){
         if(e.clientX > $(this).width()/2){
             transition(parentdiv[0], 'right');
         }else{
