@@ -197,6 +197,7 @@ p{
     height: 50%;
     overflow: hidden;
     /* transition: all 1s ease-out; */
+    /* filter: grayscale(1); */
 }
 
 
@@ -210,8 +211,8 @@ p{
 }
 
 .transition-canvas-wrapper.top{
-    transform-origin: top right;
-    top: 0
+    transform-origin: bottom right;
+    top: 0;
 }
 .transition-canvas-wrapper.bottom{
     transform-origin: top left;
@@ -224,37 +225,31 @@ p{
 }
 
 .transition-canvas-wrapper.bottom.open{
-    transform: scale(3) translateY(200%) rotate(45deg);
-    /*filter: blur(5px);*/
-    /*opacity: 0.9;*/
+    transform: scale(3) translateY(100%) rotate(45deg);
 }
 
 .transition-canvas-wrapper.top.open{
-    transform: scale(3) translateY(-200%) rotate(45deg);
-    /*filter: blur(5px);*/
-    /*opacity: 0.9;*/
+    transform: scale(3) translateY(-100%) rotate(45deg);
 }
 
 .slide-images .slide-image{
-    transition: filter 1s ease;
     will-change: filter transform;
 }
 .slide-images .slide-image.active{
     z-index: 1;
+    transition: filter 1s ease;
+    opacity: 0.8;
 }
 .slide-images .slide-image:not(.active){
-    /* display: none; */
     opacity: 0;
     z-index: 0;
-    /*transform: scale(1.2);*/
-    filter: blur(4px);
 }
 
 .slide-image::before{
     content: ' ';
     position: absolute;
     width: 100%;
-    opacity: 0.8;
+    opacity: 1;
     height: 100%;
     background: -moz-radial-gradient(center, ellipse cover, rgba(63,63,63,0.4) 0%, rgba(0,0,0,0.99) 45%, rgba(0,0,0,1) 100%); /* FF3.6-15 */
     background: -webkit-radial-gradient(center, ellipse cover, rgba(63,63,63,0.4) 0%,rgba(0, 0, 0, 0.45) 99%,rgba(0,0,0,1) 100%); /* Chrome10-25,Safari5.1-6 */
@@ -312,10 +307,7 @@ p{
     display: inline-block;
     font-weight: 400;
     cursor: pointer;
-    /* width: 16%; */
-    /* min-width: 150px; */
     margin: 0 10px 10px 10px;
-    /* max-width: 180px; */
     position: relative;
     white-space: nowrap;
 }
@@ -324,7 +316,7 @@ p{
 }
 .main-menu > ul li a{
     background: #111;
-    /* display: block; */
+     display: block; */
     padding: 0 10px;
     transition: all 0.5s ease;
 }
@@ -361,7 +353,6 @@ p{
 .main-menu li ul{
     position: absolute;
     padding: 0;
-    /*margin: 0px 0 0 -5px;*/
     transition: all 0.3s cubic-bezier(.39,.82,.66,.8);
     display: none;
     overflow: hidden;
@@ -395,8 +386,6 @@ p{
 .modal{
     position: fixed;
     text-shadow: none;
-    /* border: 1px solid #FFF; */
-    /* padding: 10px 30px; */
     margin-bottom: 20px;
     font-size: 14px;
     font-family: Karla;

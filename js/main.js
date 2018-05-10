@@ -83,14 +83,16 @@ $(document).ready(function(){
             wrapper_2 = $('.transition-canvas-wrapper.bottom', parentdiv);
             $(wrapper_1).html('').show();
             $(wrapper_2).html('').show();
-            $(wrapper_1).append($('.slide-image.active', parentdiv).clone().fixsize().removeClass('active'));
-            $(wrapper_2).append($('.slide-image.active', parentdiv).clone().fixsize().removeClass('active'));
+            var current_slide = $('.slide-image.active', parentdiv);
+            var next_slide = current_slide.next('.slide-image');
 
-            next_slide = $('.slide-image.active', parentdiv).next('.slide-image');
+            $(wrapper_1).append(current_slide.clone().fixsize().removeClass('active'));
+            $(wrapper_2).append(current_slide.clone().fixsize().removeClass('active'));
+
             if (next_slide.length == 0) next_slide = $('.slide-image:first-child', parentdiv);
 
-            $('.slide-image.active', parentdiv).removeClass('active');
-            $(next_slide).addClass('active');
+            next_slide.addClass('active');
+            current_slide.removeClass('active');
             setTimeout(function(){
                 $('.transition-canvas-wrapper', parentdiv).addClass('open');
             }, 1);
@@ -103,8 +105,8 @@ $(document).ready(function(){
             wrapper_2 = $('.transition-canvas-wrapper.bottom', parentdiv);
             $(wrapper_1).html('').show();
             $(wrapper_2).html('').show();
-
-            next_slide = $('.slide-image.active', parentdiv).prev('.slide-image');
+            var current_slide = $('.slide-image.active', parentdiv);
+            var next_slide = current_slide.prev('.slide-image');
             if (next_slide.length == 0) next_slide = $('.slide-image:last-child', parentdiv);
 
 
@@ -117,8 +119,8 @@ $(document).ready(function(){
                 $('.transition-canvas-wrapper', parentdiv).removeClass('open');
             },1);
             setTimeout(function(){
-                $('.slide-image.active', parentdiv).removeClass('active');
-                $(next_slide).addClass('active');
+                current_slide.removeClass('active');
+                next_slide.addClass('active');
                 $(wrapper_1).hide();
                 $(wrapper_2).hide();
             }, 1000);
