@@ -149,8 +149,10 @@ $(document).ready(function(){
 
     parentdiv.on('click', function(e){
         if(e.clientX > $(this).width()/2){
+            ga('send', 'event', 'gallery', 'next-image');
             transition(parentdiv[0], 'right');
         }else{
+            ga('send', 'event', 'gallery', 'prev-image');
             transition(parentdiv[0], 'left');
         }
 
@@ -195,7 +197,10 @@ $(document).ready(function(){
     });
     $('.main-menu ul li > a').on('tap', function(){
         $(this).closest('li').toggleClass('open');
+    });
 
+    $('a').on('click', function(){
+        ga('send', 'event', 'link-click', $(this).text());
     })
     $('body').on('tap', function(e) {
         // click_on_menu = $(e.target).closest('#main-menu').length;
