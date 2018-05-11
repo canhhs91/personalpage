@@ -8,6 +8,12 @@ const TRANSITION_INTERVAL = 3000;
 var MAGIC_A, MAGIC_B, MAGIC_C;
 var is_mouse_on_menu = false;
 var auto_play = 0;
+send_event(category, action){
+    return gtag('event', action, {
+      'event_category': category
+    });
+}
+
 area = function(A, B, C) {
     return Math.abs(( A.x * (B.y - C.y) + B.x * (C.y - A.y) + C.x * (A.y - B.y) ) / 2);
 }
@@ -149,10 +155,11 @@ $(document).ready(function(){
 
     parentdiv.on('click', function(e){
         if(e.clientX > $(this).width()/2){
-            ga('send', 'event', 'gallery', 'next-image');
+            send_event('gallery', 'next-image');
             transition(parentdiv[0], 'right');
         }else{
-            ga('send', 'event', 'gallery', 'prev-image');
+            send_event('gallery', 'prev-image');
+            gtag('event', 'xyz');
             transition(parentdiv[0], 'left');
         }
 
@@ -200,7 +207,7 @@ $(document).ready(function(){
     });
 
     $('a').on('click', function(){
-        ga('send', 'event', 'link-click', $(this).text());
+        send_event('link-click', $(this).text());
     })
     $('body').on('tap', function(e) {
         // click_on_menu = $(e.target).closest('#main-menu').length;
