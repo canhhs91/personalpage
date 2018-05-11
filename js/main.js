@@ -138,14 +138,14 @@ $(document).ready(function(){
         }, TRANSITION_INTERVAL);
     })
 
-    $('.navigation-arrow', parentdiv).click(function(){
-
-        if($(this).hasClass('left-arrow')){
-            transition(parentdiv[0], 'left');
-        }else{
-            transition(parentdiv[0], 'right');
-        }
-    });
+    // $('.navigation-arrow', parentdiv).click(function(){
+    //
+    //     if($(this).hasClass('left-arrow')){
+    //         transition(parentdiv[0], 'left');
+    //     }else{
+    //         transition(parentdiv[0], 'right');
+    //     }
+    // });
 
     parentdiv.on('click', function(e){
         if(e.clientX > $(this).width()/2){
