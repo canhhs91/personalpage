@@ -8,7 +8,7 @@ const TRANSITION_INTERVAL = 3000;
 var MAGIC_A, MAGIC_B, MAGIC_C;
 var is_mouse_on_menu = false;
 var auto_play = 0;
-send_event(category, action){
+send_event = function(category, action){
     return gtag('event', action, {
       'event_category': category
     });
